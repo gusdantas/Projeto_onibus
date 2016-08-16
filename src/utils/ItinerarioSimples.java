@@ -6,15 +6,13 @@ import java.time.LocalTime;
 /**
  * Created by Gustavo on 13/08/2016.
  */
-public abstract class ItinerarioSimples {
-    //int id;
+abstract class ItinerarioSimples {
     Trajeto linha;
     DayOfWeek diaDaSemana;
     Ponto pOrigem, pDestino;
     LocalTime tOrigem, tDestino;
 
-    public ItinerarioSimples(Trajeto l, DayOfWeek dds, Ponto or, Ponto de, LocalTime o, LocalTime d){
-        //this.id = i;
+    ItinerarioSimples(Trajeto l, DayOfWeek dds, Ponto or, Ponto de, LocalTime o, LocalTime d){
         this.linha = l;
         this.diaDaSemana = dds;
         this.pOrigem = or;
@@ -22,14 +20,6 @@ public abstract class ItinerarioSimples {
         this.tOrigem = o;
         this.tDestino = d;
     }
-
-    /*public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }*/
 
     public abstract Trajeto getLinha();
 

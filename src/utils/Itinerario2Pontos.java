@@ -8,7 +8,7 @@ import java.time.LocalTime;
  */
 public class Itinerario2Pontos extends ItinerarioSimples {
 
-    public Itinerario2Pontos(Trajeto l, DayOfWeek dds, LocalTime to, LocalTime td) {
+    Itinerario2Pontos(Trajeto l, DayOfWeek dds, LocalTime to, LocalTime td) {
         super(l, dds, l.getPontos()[0], l.getPontos()[1], to, td);
     }
 
