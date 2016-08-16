@@ -1,4 +1,4 @@
-package Onibus;
+package utils;
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;
@@ -6,19 +6,19 @@ import java.time.LocalTime;
 /**
  * Created by Gustavo on 13/08/2016.
  */
-public class Trajeto2P extends TrajetoSimples {
+public class Itinerario2Pontos extends ItinerarioSimples {
 
-    public Trajeto2P(Linha l, DayOfWeek dds, LocalTime to, LocalTime td) {
+    public Itinerario2Pontos(Trajeto l, DayOfWeek dds, LocalTime to, LocalTime td) {
         super(l, dds, l.getPontos()[0], l.getPontos()[1], to, td);
     }
 
     @Override
-    public Linha getLinha() {
+    public Trajeto getLinha() {
         return linha;
     }
 
     @Override
-    public void setLinha(Linha l) {
+    public void setLinha(Trajeto l) {
         linha = l;
     }
 

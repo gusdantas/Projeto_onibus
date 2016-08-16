@@ -1,0 +1,63 @@
+package utils;
+
+import java.time.DayOfWeek;
+
+/**
+ * Created by Gustavo on 14/08/2016.
+ */
+public enum Trajeto {
+    L11(DayOfWeek.MONDAY,Ponto.CAMPUS_SANTO_ANDRE,Ponto.TERMINAL_LESTE),
+    L12(DayOfWeek.MONDAY,Ponto.TERMINAL_LESTE,Ponto.CAMPUS_SANTO_ANDRE),
+
+    L21(DayOfWeek.MONDAY,Ponto.CAMPUS_SANTO_ANDRE,Ponto.TERMINAL_LESTE),
+    L22(DayOfWeek.MONDAY,Ponto.TERMINAL_LESTE,Ponto.CAMPUS_SAO_BERNARDO),
+    L23(DayOfWeek.MONDAY,Ponto.CAMPUS_SAO_BERNARDO,Ponto.TERMINAL_LESTE),
+    L24(DayOfWeek.MONDAY,Ponto.TERMINAL_LESTE,Ponto.CAMPUS_SANTO_ANDRE),
+
+    L31(DayOfWeek.MONDAY,Ponto.CAMPUS_SANTO_ANDRE,Ponto.TERMINAL_LESTE),
+    L32(DayOfWeek.MONDAY,Ponto.TERMINAL_LESTE,Ponto.CAMPUS_SAO_BERNARDO),
+    L33(DayOfWeek.MONDAY,Ponto.CAMPUS_SAO_BERNARDO,Ponto.TERMINAL_LESTE),
+    L34(DayOfWeek.MONDAY,Ponto.TERMINAL_LESTE,Ponto.CAMPUS_SANTO_ANDRE),
+
+    L41(DayOfWeek.MONDAY,Ponto.CAMPUS_SANTO_ANDRE,Ponto.TERMINAL_LESTE),
+    L42(DayOfWeek.MONDAY,Ponto.TERMINAL_LESTE,Ponto.CAMPUS_SAO_BERNARDO),
+    L43(DayOfWeek.MONDAY,Ponto.CAMPUS_SAO_BERNARDO,Ponto.TERMINAL_LESTE),
+    L44(DayOfWeek.MONDAY,Ponto.TERMINAL_LESTE,Ponto.CAMPUS_SANTO_ANDRE),
+
+    L51(DayOfWeek.MONDAY,Ponto.CAMPUS_SAO_BERNARDO,Ponto.PCA_EXPEDICIONARIOS),
+    L52(DayOfWeek.MONDAY,Ponto.PCA_EXPEDICIONARIOS,Ponto.TERMINAL_SBC),
+    L53(DayOfWeek.MONDAY,Ponto.TERMINAL_SBC,Ponto.PCA_EXPEDICIONARIOS),
+    L54(DayOfWeek.MONDAY,Ponto.PCA_EXPEDICIONARIOS,Ponto.CAMPUS_SAO_BERNARDO),
+
+    L61(DayOfWeek.MONDAY,Ponto.CAMPUS_SANTO_ANDRE,Ponto.TERMINAL_LESTE),
+    L62(DayOfWeek.MONDAY,Ponto.TERMINAL_LESTE,Ponto.CAMPUS_SAO_BERNARDO),
+    L63(DayOfWeek.MONDAY,Ponto.CAMPUS_SAO_BERNARDO,Ponto.TERMINAL_LESTE),
+    L64(DayOfWeek.MONDAY,Ponto.TERMINAL_LESTE,Ponto.CAMPUS_SANTO_ANDRE),
+    
+    L71(DayOfWeek.SATURDAY,Ponto.CAMPUS_SANTO_ANDRE,Ponto.TERMINAL_LESTE),
+    L72(DayOfWeek.SATURDAY,Ponto.TERMINAL_LESTE,Ponto.CAMPUS_SANTO_ANDRE),
+
+    L81(DayOfWeek.SATURDAY,Ponto.CAMPUS_SANTO_ANDRE,Ponto.TERMINAL_LESTE),
+    L82(DayOfWeek.SATURDAY,Ponto.TERMINAL_LESTE,Ponto.TERMINAL_SBC),
+    L83(DayOfWeek.SATURDAY,Ponto.TERMINAL_SBC,Ponto.CAMPUS_SAO_BERNARDO),
+    L84(DayOfWeek.SATURDAY,Ponto.CAMPUS_SAO_BERNARDO,Ponto.TERMINAL_SBC),
+    L85(DayOfWeek.SATURDAY,Ponto.TERMINAL_SBC,Ponto.TERMINAL_LESTE),
+    L86(DayOfWeek.SATURDAY,Ponto.TERMINAL_LESTE,Ponto.CAMPUS_SANTO_ANDRE);
+
+
+	public DayOfWeek diaDaSemana;
+    public Ponto[] pontos;
+
+    Trajeto(DayOfWeek dds, Ponto pt1, Ponto pt2) {
+    	this.diaDaSemana = dds;
+        this.pontos = new Ponto[]{pt1,pt2};
+    }
+    
+    DayOfWeek getDiaDaSemana(){
+    	return diaDaSemana;
+    }
+
+    Ponto[] getPontos(){
+        return pontos;
+    }
+}

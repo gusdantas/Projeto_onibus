@@ -1,4 +1,4 @@
-package Onibus;
+package utils;
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;
@@ -6,14 +6,14 @@ import java.time.LocalTime;
 /**
  * Created by Gustavo on 13/08/2016.
  */
-public abstract class TrajetoSimples {
+public abstract class ItinerarioSimples {
     //int id;
-    Linha linha;
+    Trajeto linha;
     DayOfWeek diaDaSemana;
     Ponto pOrigem, pDestino;
     LocalTime tOrigem, tDestino;
 
-    public TrajetoSimples(Linha l, DayOfWeek dds, Ponto or, Ponto de, LocalTime o, LocalTime d){
+    public ItinerarioSimples(Trajeto l, DayOfWeek dds, Ponto or, Ponto de, LocalTime o, LocalTime d){
         //this.id = i;
         this.linha = l;
         this.diaDaSemana = dds;
@@ -31,9 +31,9 @@ public abstract class TrajetoSimples {
         this.id = id;
     }*/
 
-    public abstract Linha getLinha();
+    public abstract Trajeto getLinha();
 
-    public abstract void setLinha(Linha linha);
+    public abstract void setLinha(Trajeto linha);
 
     public abstract Ponto getpOrigem();
 
