@@ -48,14 +48,18 @@ public class Utils {
         return linha2p;
     }
 
-    public static LocalTime busca(LocalDateTime localDateTime, Ponto o, Ponto d, Trajeto2P[] it){
-        LocalTime localTime = LocalTime.of(00,00);
-        for (Trajeto2P anIt : it) {
-            if (localDateTime.getDayOfWeek() == anIt.getDiaDaSemana() &&
-                    localDateTime.getHour() <= anIt.gettOrigem().getHour()) {
-                if (localDateTime.getMinute() < anIt.gettOrigem().getMinute()) {
-                    localTime = LocalTime.of(anIt.gettOrigem().getHour(), anIt.gettOrigem().getMinute());
-                    break;
+    public static LocalTime[] busca(LocalDateTime localDateTime, Linha[] linhas, Trajeto2P[] it){
+        LocalTime[] localTime = new LocalTime[linhas.length];
+        int i = 0;
+        A: for (Linha l:linhas) {
+            B: for (Trajeto2P anIt : it) {
+                if (l.getPontos() == anIt.getLinha().getPontos() && localDateTime.getDayOfWeek() == anIt.getDiaDaSemana()
+                        && localDateTime.getHour() <= anIt.gettOrigem().getHour()) {
+                    if (localDateTime.getMinute() < anIt.gettOrigem().getMinute()) {
+                        localTime[i] = LocalTime.of(anIt.gettOrigem().getHour(), anIt.gettOrigem().getMinute());
+                        i++;
+                        break B;
+                    }
                 }
             }
         }
